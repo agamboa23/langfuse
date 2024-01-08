@@ -40,6 +40,7 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
     prisma,
+    redis,
   };
 };
 
@@ -70,6 +71,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
+import { redis } from "@/src/server/redis";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,

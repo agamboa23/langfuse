@@ -57,6 +57,9 @@ export const env = createEnv({
     S3_SECRET_ACCESS_KEY: z.string().optional(),
     S3_BUCKET_NAME: z.string().optional(),
     S3_REGION: z.string().optional(),
+
+    // REDIS
+    REDIS_URL: z.string().optional(),
   },
 
   /**
@@ -117,5 +120,7 @@ export const env = createEnv({
     S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
     S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
     S3_REGION: process.env.S3_REGION,
+    //REDIS
+    REDIS_URL: process.env.REDIS_URL,
   },
 });
